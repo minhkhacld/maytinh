@@ -1,0 +1,141 @@
+body {
+    margin: 0px auto;
+    padding: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    width: 345px;
+    height: 100%;
+    margin: auto;
+    background-color: darkcyan;
+    color: white;
+    font-size: 0.9rem;
+}
+
+h1 {
+    background-color: red;
+    color: white;
+    font-size: 1.2em;
+    height: 1.8em;
+    margin: 0px auto;
+    text-align: center;
+    padding: 0px;
+    line-height: 1.8em;
+    box-shadow: 2px 4px 4px rgb(89, 90, 94)
+}
+
+h6 {
+    margin: 5px;
+    padding: 2px;
+    font-size: 0.8em;
+    color: yellow
+}
+
+.table {
+    margin: 1px auto;
+    padding: 2px;
+    margin-top: 3px;
+}
+
+.table_kq {
+    border: solid white 1px;
+    background-color: white;
+    color: teal;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.input {
+    text-align: center;
+    border: 1px solid white;
+    box-shadow: 2px 4px 4px rgb(89, 90, 94)
+}
+
+.form-group {
+    margin: 2px auto;
+    padding: 2px;
+    width: 330px;
+    box-shadow: 1px 1px 1px 1px rgb(89, 90, 94)
+}
+
+.tableheader {
+    background-color: sandybrown;
+    width: 320px;
+    height: 20px;
+    box-shadow: 2px 2px 3px rgb(89, 90, 94);
+}
+
+.table_wh {
+    margin: 0px auto;
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+}
+
+.btn_group {
+    margin: 2px auto;
+    padding: 2px;
+    text-align: center;
+}
+
+.btn_group :hover {
+
+    background-color: springgreen;
+    color: black;
+}
+
+.whrs {
+    font-size: 18px;
+}
+
+.table_wh_input {
+    width: 50px;
+    height: 18px;
+    margin: 1px auto;
+    padding: 0px;
+    border: chocolate 1px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* selection */
+.form-control {
+    background-color: yellow;
+    width: 320px;
+    height: 25px;
+    margin: 2px auto;
+    padding: 2px;
+}
+
+.btn_dongy {
+    width: 100px;
+    height: 25px;
+    line-height: 100%;
+    background-color: tomato;
+    color: mintcream;
+    font-weight: bold;
+    text-align: center;
+    margin: 2px auto;
+    padding: 0px;
+    box-shadow: 2px 2px 3px rgb(89, 90, 94)
+}
+
+.btn_lammoi {
+    width: 100px;
+    height: 25px;
+    line-height: 100%;
+    background-color: tomato;
+    color: mintcream;
+    font-weight: bold;
+    text-align: center;
+    margin: 2px auto;
+    padding: 0px;
+    box-shadow: 2px 2px 3px rgb(89, 90, 94)
+}
+
+.form-group :hover {
+    background-color: tomato;
+    color: mintcream;
+}
