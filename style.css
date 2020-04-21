@@ -47,7 +47,9 @@ h6 {
 }
 
 .input {
+    height: 20px;
     text-align: center;
+    margin-top: 5px;
     border: 1px solid white;
     box-shadow: 2px 4px 4px rgb(89, 90, 94)
 }
