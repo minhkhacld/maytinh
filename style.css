@@ -141,3 +141,28 @@ h6 {
     color: mintcream;
 }
 
+.social-icons{
+    text-align: center;
+}
+.social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    background-color: #495057;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+    
+  }
+  /* .social-icons .social-icon:last-child {
+    margin-right: 0;
+  } */
+  .social-icons .social-icon:hover {
+    background-color: #bd5d38;
+  }
+  
