@@ -35,8 +35,7 @@ li a {
   padding-top:1rem ;  
   padding-left:1rem ;
   padding-right:1rem ;  
-  text-decoration: none;
-  margin-left: 0;
+  text-decoration: none; 
 }
 
 li a:hover:not(.active) {
