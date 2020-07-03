@@ -1,298 +1,339 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Máy tính</title>
-    <link rel="icon" type="image/x-icon" href="./picture//favicon.ico" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Calculator</title>
+    <link rel="icon" type="image/x-icon" href="./picture/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <style>
-    
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    font-size: 13px !important;   
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 10px 12px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
-  
-  .active {
-    background-color: #4CAF50;
-  }
-  .container-fluid{
-    /* position: -webkit-sticky; */
-    position: sticky !important;
-    top: 0;
-  }
-    
-    </style>
+
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!-- Nar barr -->
-        <div class="row" class="nar-bar">
-            <ul class="limenu">
-                <li><a class="active" href="http://minhkhacld.github.io/maytinh">Home</a></li>
-                <li><a href="http://minhkhacld.github.io/smv">SVM</a></li>
-                <li><a href="http://minhkhacld.github.io/copt">COPT</a></li>
-                <li><a href="http://minhkhacld.github.io/tudien">Từ điển</a></li>
-                <!-- <li><a href="#contact">Contact</a></li> -->
-                <li><a href="#about">About</a></li>
-            </ul>
+
+    <div class="container-fluid" style="height: 2.5rem;">
+        <div class="row">
+            <div class="col">
+                <!-- Nar barr -->
+                <div class="nar-bar">
+                    <ul class="limenu">
+                        <li><a class="active" href="https://minhkhacld.github.io/smv/">Home</a></li>
+                        <li><a href="https://minhkhacld.github.io/smv/">SMV</a></li>
+                        <li><a href="https://minhkhacld.github.io/tudien/">Từ điển</a></li>                       
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="container" id="title">
+        <div class="row">
+            <div class="col">
+                <h1><i class="fa fa-calculator" aria-hidden="true"></i> Efficiency & Incentive Calculator</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Nhập kết quả -->
     <div class="container">
         <div class="row">
-            <h1><i class="fas fa-calculator"
-                    style="font-size:25px;color:rgb(236, 240, 4);text-shadow:2px 2px 4px #000000; margin:2px 10px;"></i>
-                Tính Hiệu Suất & Tiền Thưởng</h1>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th id="th_thongbaonhaplieu" colspan="2" class="tableheader">Xin chào! Mời bạn nhập dữ liệu</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td scope="row">SMV</td>
-                        <td>
-                            <input id="smv" class="input" type="text" placeholder="Nhập SMV">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Không nhớ SMV?
-                        </td>
-                        <td>
-                            <a href="http://minhkhacld.github.io/smv/" style="text-align: center; color: yellow;"><i
-                                    class="far fa-hand-point-down" style="font-size:15px; margin-right: 5px;"></i>Ấn vào
-                                đây để tìm</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Sản lượng thực tế</td>
-                        <td>
-                            <input id="sltt" class="input" type="text" placeholder="Nhập Sản lượng thực tế">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td scope="row">Lost time</td>
-                        <td>
-                            <input id="losttime" class="input" type="text" value=0 placeholder="Nhập Lost time">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">NPT Số người bị ảnh hưởng</td>
-                        <td>
-                            <input id="npt-mp" class="input" type="text" value=0 placeholder="Nhập số người bị ảnh hưởng">
-                        </td>                        
-                    </tr>
-                    <tr>
-                        <td scope="row">NPT Số giờ bị ảnh hưởng</td>
-                        <td>
-                            <input id="npt-time" class="input" type="text" value=0 placeholder="Nhập số giờ bị ảnh hưởng">
-                        </td>                        
-                    </tr>
-
-                   
-                    <tr>
-                        <td scope="row">% Mục tiêu</td>
-                        <td>
-                            <input id="tarper" class="input" value=100% type="text"
-                                placeholder="Nhập % (không bắt buộc)">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="form-group">
-                <label class="label" for="">Chọn loại hàng</label>
-                <select class="form-control" name="" id="typeofpd">
-                    <option value="1">Hàng thông thường (NIKE, REI, ASICS, UA)</option>
-                    <option value="2">Hàng kỹ thuật (SPORTFIELD)</option>
-                </select>
+            <div class="col">
+                <h3><i class="fa fa-info-circle" aria-hidden="true"></i> Thông tin cơ bản</h3>
             </div>
         </div>
-        <!-- Bảng nho giờ làm việc từ 7h30 -9h30 -->
-        <table class="table_wh">
-            <thead>
-                <tr>
-                    <th colspan="9" class="whrs">Số người và Số giờ làm việc</th>
-                </tr>
-                <tr>
-                    <th class="table_wh_input">7.0h</th>
-                    <th class="table_wh_input">7.5h</th>
-                    <th class="table_wh_input">8.0h</th>
-                    <th class="table_wh_input">8.5h</th>
-                    <th class="table_wh_input">9.0h</th>
-                    <th class="table_wh_input">9.5h</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td scope="row">
-                        <input id="baygio" type="text" class="table_wh_input">
-                    </td>
-                    <td><input id="baybamuoi" type="text" class="table_wh_input"></td>
-                    <td><input id="tamgio" type="text" class="table_wh_input"></td>
-                    <td><input id="tambamuoi" type="text" class="table_wh_input"></td>
-                    <td><input id="chingio" type="text" class="table_wh_input"></td>
-                    <td><input id="chinbamuoi" type="text" class="table_wh_input"></td>
-                </tr>
-
-            </tbody>
-        </table>
-        <!-- Bảng nho giờ làm việc từ 9h30 -11h30 -->
-        <table class="table_wh">
-            <thead>
-                <tr>
-                    <th class="table_wh_input">10.0h</th>
-                    <th class="table_wh_input">10.5h</th>
-                    <th class="table_wh_input">11.0h</th>
-                    <th class="table_wh_input">11.5h</th>
-                    <th class="table_wh_input">
-                        <input id="timeoption1" class="table_wh_input" type="text" value="" placeholder="Giờ(h)">
-                    </th>
-                    <th class="table_wh_input">
-                        <input id="timeoption2" class="table_wh_input" type="text" value="" placeholder="Giờ(h)">
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input id="muoigio" type="text" class="table_wh_input"></td>
-                    <td><input id="muoibamuoi" type="text" class="table_wh_input"></td>
-                    <td><input id="muoimotgio" type="text" class="table_wh_input"></td>
-                    <td><input id="muoimotbamuoi" type="text" class="table_wh_input"></td>
-                    <td><input id="mpoption1" type="text" class="table_wh_input" value="" placeholder="Người"></td>
-                    <td><input id="mpoption2" type="text" class="table_wh_input" value="" placeholder="Người"></td>
-
-                </tr>
-
-            </tbody>
-        </table>
-
-        <div class="btn_group">
-            <button id="th_tinhtoan" type="button" class="btn_dongy" value="">Tính Toán</button>
-            <button id="th_lammoi" type="button" class="btn_lammoi" value="">Làm Mới</button>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-clock" aria-hidden="true"></i> SMV</label>
+                    <input type="text" class="form-control" name="" id="smv" aria-describedby="helpId"
+                        placeholder="Nhập SMV">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-cubes" aria-hidden="true"></i> Sản lượng thực tế</label>
+                    <input type="text" class="form-control" name="" id="sltt" aria-describedby="helpId"
+                        placeholder="Nhập sản lượng thực tế">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""> <i class="fa fa-bullseye" aria-hidden="true"></i> Mục tiêu (%)</label>
+                    <input type="text" class="form-control" name="" id="tarper" value="100%" aria-describedby="helpId"
+                        placeholder="Nhập % (không bắt buộc)">
+                </div>
+            </div>
         </div>
-        <div class="table_d">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th colspan="2" class="tableheader">Kết quả</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td scope="row">Attendent Minute</td>
-                        <td id="attent_min" class="table_kq">Chưa nhập dữ liệu</td>
-
-                    </tr>
-                    <tr>
-                        <td scope="row">Produce Minute</td>
-                        <td id="produce_min" class="table_kq">Chưa nhập dữ liệu</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Dư/Thiếu</td>
-                        <td id="result_min" class="table_kq">Chưa nhập dữ liệu</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Mục tiêu</td>
-                        <td id="target" class="table_kq">Chưa nhập dữ liệu</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Hiệu suất</td>
-                        <td id="eff" class="table_kq">Chưa nhập dữ liệu</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Tiền thưởng công nhân</td>
-                        <td id="opeins" class="table_kq">Chưa nhập dữ liệu</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Tiền thưởng tổ trưởng</td>
-                        <td id="leaderins" class="table_kq">Chưa nhập dữ liệu</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- //Lost time -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-flask" aria-hidden="true"></i> Lost time</label>
+                    <input type="text" class="form-control" name="" id="losttime" aria-describedby="helpId"
+                        placeholder="Nhập Lost time">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-user" aria-hidden="true"></i> Số người bị ảnh hưởng (NPT)</label>
+                    <input type="text" class="form-control" name="" id="npt-mp" aria-describedby="helpId"
+                        placeholder="Nhập số người">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""> <i class="fa fa-hourglass" aria-hidden="true"></i> Số giờ bị ảnh hưởng (NPT)</label>
+                    <input type="text" class="form-control" name="" id="npt-time" aria-describedby="helpId"
+                        placeholder="Nhập số giờ">
+                </div>
+            </div>
         </div>
-        <div class="container">
-            <div>
-                <h1><i class="fas fa-search-dollar"
-                        style="font-size:25px;color:rgb(236, 240, 4);text-shadow:2px 2px 4px #000000; margin:2px 10px;"></i>
-                    Tra cứu Hiệu Suất - Tiền Thưởng</h1>
-            </div>
-            <div class="form-group">
-                <label class="label" for="">Chọn Khu Vực</label>
-                <select class="form-control" name="" id="area">
-                    <option value="1" id="sew">Sewing</option>
-                    <option value="2" id="nonsew">Spreader, Numbering, Bundling, Cutting, Supermarket, Fusing, Bonding,
-                        Printing, Recut</option>
-                    <option value="3" id="iron">Ironing, Cutter</option>
-                    <option value="4" id="staff">Staff non-sewing, Production Assitant, Automation</option>
-                    <option value="5" id="fabric">Fabric, Accessory</option>
-                    <option value="6" id="qaqc">QA, QC</option>
-                    <option value="7" id="scan">Scan and pack, Finishing, Packing, Cleaning, Change Needle</option>
-                    <option value="8" id="ie">IE, Mechanic, PPC, Maintainance, Technical</option>
-                </select>
-            </div>
-            <div class="form-group" id="loaihang">
-                <label class="label" for="">Chọn loại hàng</label>
-                <select class="form-control" name="" id="typeof_pd">
-                    <option value="1">Hàng thông thường (NIKE, REI, ASICS, UA)</option>
-                    <option value="2">Hàng kỹ thuật (SPORTFIELD)</option>
-                </select>
-            </div>
 
-            <div class="btn_group">
-                <button id="th_xemkq" type="button" class="btn_dongy" value="">Xem Kết Quả</button>
-                <button id="th_refresh" type="button" class="btn_lammoi" value="">Chọn Lại</button>
+    </div>
+    <!-- Số người và số giờ làm việc -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3><i class="fa fa-eye" aria-hidden="true"></i> Số người và số giờ làm việc</h3>
             </div>
-            <div class="table_d">
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">7H</label>
+                    <input type="text" class="form-control" name="" id="baygio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">7.5H</label>
+                    <input type="text" class="form-control" name="" id="baybamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">8.0H</label>
+                    <input type="text" class="form-control" name="" id="tamgio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">8.5H</label>
+                    <input type="text" class="form-control" name="" id="tambamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">9H</label>
+                    <input type="text" class="form-control" name="" id="chingio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">9.5H</label>
+                    <input type="text" class="form-control" name="" id="chinbamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">10H</label>
+                    <input type="text" class="form-control" name="" id="muoigio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">10.5H</label>
+                    <input type="text" class="form-control" name="" id="muoibamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">11H</label>
+                    <input type="text" class="form-control" name="" id="muoimotgio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">11.5H</label>
+                    <input type="text" class="form-control" name="" id="muoimotbamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for=""><span><input type="text" class="form-control" name="" id="timeoption1"
+                                aria-describedby="helpId" placeholder=""></span></label>
+                    <input type="text" class="form-control" name="" id="timeoption2" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for=""><span><input type="text" class="form-control" name="" id="mpoption1"
+                                aria-describedby="helpId" placeholder=""></span></label>
+                    <input type="text" class="form-control" name="" id="mpoption2" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <label for="">Chọn loại hàng</label>
+                    <select class="form-control" name="" id="typeofpd">
+                        <option value="1">Hàng REI,UA,ASICS,NIKE</option>
+                        <option value="2">SPORTFIELD</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <button type="button" id="th_tinhtoan" class="btn btn-primary">Tính Toán</button>
+            </div>
+            <div class="col-3">
+                <button type="button" id="th_lammoi" class="btn btn-primary">Làm Mới</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+    <!-- Xuat ket qua -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3><i class="fa fa-filter" aria-hidden="true"></i> Kết quả</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th colspan="3" class="tableheader">Kết quả</th>
+                            <th style="width:50%">Thông tin cần tính:</th>
+                            <th style="width:50%">Kết quả:</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <div id="box"></div>
+                        <tr>
+                            <td scope="row"><i class="fa fa-hourglass-start" aria-hidden="true"></i> Attendent Minute
+                            </td>
+                            <td class="result" id="attent_min"></td>
+
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-heart" aria-hidden="true"></i> Produce Minute</td>
+                            <td class="result" id="produce_min"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-balance-scale" aria-hidden="true"></i> Dư/Thiếu</td>
+                            <td class="result" id="result_min"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-bullseye" aria-hidden="true"></i> Mục tiêu sản lượng</td>
+                            <td class="result" id="target"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-percent" aria-hidden="true"></i> Hiệu suất</td>
+                            <td class="result" id="eff"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-users" aria-hidden="true"></i> Tiền thưởng công nhân</td>
+                            <td class="result" id="opeins"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-user-circle" aria-hidden="true"></i> Tiền thưởng tổ trưởng
+                            </td>
+                            <td class="result" id="leaderins"></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-
-        <!-- <div>
-            <h6><i class="fas fa-user-tie" style="margin: 5px 3px; color:white;font-size: 13px;"></i>IE.Khapham <i
-                    class="fas fa-phone" style="margin: 5px 3px; color:white;font-size: 13px;"></i> 0355210716 <i
-                    class="far fa-envelope" style="margin: 5px 3px; color:white; font-size: 13px;"></i>pmkha92@gmail.com
-            </h6>
-        </div> -->
+    </div>
+    <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col">
+                <h3><i class="fa fa-search" aria-hidden="true"></i> Tra cứu hiệu suất - tiền thưởng</h3>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label" for=""><i class="fa fa-map" aria-hidden="true"></i> Chọn Khu Vực</label>
+            <select class="form-control" name="" id="area">
+                <option value="1" id="sew">Sewing</option>
+                <option value="2" id="nonsew">Spreader, Numbering, Bundling, Cutting, Supermarket, Fusing, Bonding,
+                    Printing, Recut</option>
+                <option value="3" id="iron">Ironing, Cutter</option>
+                <option value="4" id="staff">Staff non-sewing, Production Assitant, Automation</option>
+                <option value="5" id="fabric">Fabric, Accessory</option>
+                <option value="6" id="qaqc">QA, QC</option>
+                <option value="7" id="scan">Scan and pack, Finishing, Packing, Cleaning, Change Needle</option>
+                <option value="8" id="ie">IE, Mechanic, PPC, Maintainance, Technical</option>
+            </select>
+        </div>
+        <div class="form-group" id="loaihang">
+            <label class="label" for=""><i class="fa fa-star" aria-hidden="true"></i> Chọn loại hàng</label>
+            <select class="form-control" name="" id="typeof_pd">
+                <option value="1">Hàng thông thường (NIKE, REI, ASICS, UA)</option>
+                <option value="2">Hàng kỹ thuật (SPORTFIELD)</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <button id="th_xemkq" type="button" class="btn btn-primary" value="">Đồng ý</button>
+            </div>
+            <div class="col-3">
+                <button id="th_refresh" type="button" class="btn btn-primary" value="">Chọn Lại</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        <div class="table_d">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="tableheader"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div id="box"></div>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" id="btn_thugon" class="btn btn-primary"
+                    style="display:none; background-color: tomato;">Thu Gọn</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
                 <div class="social-icons">
                     <a class="social-icon" href="https://www.linkedin.com/in/kha-ph%E1%BA%A1m-minh-58aa68153/"><i
                             class="fab fa-linkedin-in"></i></a><a class="social-icon"
@@ -302,8 +343,25 @@ ul {
                 </div>
             </div>
         </div>
-    </div>
-    <script src="app.js"></script>
+
+        <div class="row">
+            <div class="col" id="footer">
+                Ứng dụng được viết bởi phòng IE - Kha. Tel:0355210716, Email: pmkha92@gmail.com. <br />
+                ©Khapham 2020. All rights reserved.
+            </div>
+        </div>
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="script.js">
+        </script>
 </body>
 
 </html>

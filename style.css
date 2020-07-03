@@ -1,146 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 body {
-    margin: 0px auto;
-    padding: 0px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: darkcyan;
+  color: white;
+  font-family: "Oxygen", sans-serif !important;  
 }
+.nar-bar{    
+  margin: 0;
+  padding: 0; 
+line-height: 2rem;
+}
+ul {
+  list-style-type: none; 
+  overflow: hidden;
+  /* background-color: #333; */
+  font-size: 14px;  
+  padding: 0; 
+  margin: 0;
+  display: flex;
+  align-items: center;  
+  line-height: .5rem;
+}
+li {
+  float: left; 
+  line-height: 2.5rem;  
+  
+}
+li a {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding-top:1rem ;  
+  padding-left:1rem ;
+  padding-right:1rem ;  
+  text-decoration: none;
+  margin-left: 0;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+.active {
+  background-color: #4CAF50;
+}
+.container-fluid{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;  
+  z-index: 1;
+  margin: 0; 
+  background-color: #333; 
+  display: flex;
+  align-items: center;  
+  vertical-align: middle;
+} 
+#title {
+  margin-top: 0px;
+  border-radius: none;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  background-color: red; 
+  
+  }
 
 .container {
-    width: 345px;
-    height: 100%;
-    margin: auto;
-    background-color: darkcyan;
-    color: white;
-    font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 5px;
+  /* padding-left: 8px;
+  padding-right: 8px; */
+  margin-top: 8px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 3px tomato;  
+  z-index: 5;
+ 
 }
-
-h1 {
-    background-color: red;
-    color: white;
-    font-size: 1.2em;
-    height: 1.8em;
-    margin: 0px auto;
-    text-align: center;
-    padding: 0px;
-    line-height: 1.8em;
-    box-shadow: 2px 4px 4px rgb(89, 90, 94)
+.container h1 {
+  text-align: center;
+  color: white !important;
+  font-size: 3.8vh;   
+  font-weight: bold;  
 }
-
-h6 {
-    margin: 5px;
-    padding: 2px;
-    font-size: 0.8em;
-    color: yellow
+.container h3 {
+  padding: 5px;
+  font-size: 3vh;
+  text-align: center;
+  color: yellow;
+  font-weight: bold;
+  box-shadow:3px 4px 4px rgb(89, 90, 94) 
 }
-
-.table {
-    margin: 1px auto;
-    padding: 2px;
-    margin-top: 3px;
-}
-
-.table_kq {
-    border: solid white 1px;
-    background-color: white;
-    color: teal;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.input {
-    height: 20px;
-    text-align: center;
-    margin-top: 5px;
-    border: 1px solid white;
-    box-shadow: 2px 4px 4px rgb(89, 90, 94)
-}
-
 .form-group {
-    margin: 2px auto;
-    padding: 2px;
-    width: 330px;
-    box-shadow: 1px 1px 1px 1px rgb(89, 90, 94)
+  margin-top: 0;
+  margin-bottom: 0;
 }
-
-.tableheader {
-    background-color: sandybrown;
-    width: 320px;
-    height: 20px;
-    box-shadow: 2px 2px 3px rgb(89, 90, 94);
+.form-group.form-control {
+  margin-top: 0;
+  margin-bottom: 0;  
 }
-
-.table_wh {
-    margin: 0px auto;
-    padding: 0px;
-    width: 50px;
+input[type=text]{
+  box-shadow: 3px 4px 4px rgb(89, 90, 94)  
+}
+.col-3 .form-group{
+    text-align: center;
+}
+.col-3 .form-group .form-control{
+    text-align: center;
+}
+#th_tinhtoan {
+  display: block;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color:tomato;
+  width: 100px;
+  height: 50px;
+  border: none;
+  box-shadow: 3px 4px 4px rgb(89, 90, 94)  
+}
+#th_lammoi {
+  display: block;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: tomato;
+  width: 100px;
+  height: 50px;
+  border: none;
+  box-shadow: 3px 4px 4px rgb(89, 90, 94)  
+}
+#th_xemkq {
+  display: block;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: tomato;
+  border: none;
+  width: 100px;
+  height: 50px;
+  border: none;
+  box-shadow: 3px 4px 4px rgb(89, 90, 94)  
+}
+#th_refresh {
+  display: block;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: tomato;
+  width: 100px !important;
+  height: 50px;
+  border: none;
+  box-shadow: 3px 4px 4px rgb(89, 90, 94)  
+}
+#btn_thugon{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+    /* background-color: tomato; */
+    width: 100px !important;
     height: 50px;
-    font-size: 12px;
+    border: none;
+    box-shadow: 3px 4px 4px rgb(89, 90, 94)  
 }
-
-.btn_group {
-    margin: 2px auto;
-    padding: 2px;
-    text-align: center;
+#th_tinhtoan:hover {
+  background-color: #e307d1;
 }
-
-.btn_group :hover {
-
-    background-color: springgreen;
-    color: black;
+#th_lammoi:hover {
+  background-color: #e307d1;
 }
-
-.whrs {
-    font-size: 18px;
+#th_xemkq:hover {
+  background-color: #e307d1;
 }
-
-.table_wh_input {
-    width: 50px;
-    height: 18px;
-    margin: 1px auto;
-    padding: 0px;
-    border: chocolate 1px;
-    text-align: center;
-    font-size: 12px;
+#th_refresh:hover {
+  background-color: #e307d1;
 }
-
-/* selection */
-.form-control {
-    background-color: yellow;
-    width: 320px;
-    height: 25px;
-    margin: 2px auto;
-    padding: 2px;
+#btn_thugon:hover{
+    background-color: #e307d1;
 }
-
-.btn_dongy {
-    width: 100px;
-    height: 25px;
-    line-height: 100%;
-    background-color: tomato;
-    color: mintcream;
-    font-weight: bold;
-    text-align: center;
-    margin: 2px auto;
-    padding: 0px;
-    box-shadow: 2px 2px 3px rgb(89, 90, 94)
+select{
+  box-shadow: 3px 4px 4px rgb(89, 90, 94); 
+  background-color: yellow !important; 
 }
-
-.btn_lammoi {
-    width: 100px;
-    height: 25px;
-    line-height: 100%;
-    background-color: tomato;
-    color: mintcream;
-    font-weight: bold;
-    text-align: center;
-    margin: 2px auto;
-    padding: 0px;
-    box-shadow: 2px 2px 3px rgb(89, 90, 94)
+select:hover{
+  background-color: tomato !important;  
+  color: white;
 }
-.form-group :hover {
-    background-color: tomato;
-    color: mintcream;
+.table_d{
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
-
 .social-icons{
     text-align: center;
 }
@@ -148,21 +202,26 @@ h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 2rem;
-    width: 2rem;
-    background-color: #495057;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: tomato;
     color: #fff;
     border-radius: 100%;
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-right: 1.5rem;
+    font-size: 1rem;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+    margin-right: 0.5rem;
+    box-shadow: 3px 4px 4px rgb(89, 90, 94) 
     
   }
-  /* .social-icons .social-icon:last-child {
+  .social-icons .social-icon:last-child {
     margin-right: 0;
-  } */
-  .social-icons .social-icon:hover {
-    background-color: #bd5d38;
   }
-  
+  .social-icons .social-icon:hover {
+    background-color: red;
+  }
+  #footer{
+      text-align: center;
+      vertical-align: middle;
+  }
+ 
