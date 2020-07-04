@@ -102,6 +102,9 @@ li a:hover:not(.active) {
   margin-top: 0;
   margin-bottom: 0;  
 }
+.container .row .col-4 .form-group label{
+  font-size: 15px;
+}
 input[type=text]{
   box-shadow: 3px 4px 4px rgb(89, 90, 94)  
 }
