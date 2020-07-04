@@ -108,6 +108,12 @@ li a:hover:not(.active) {
 input[type=text]{
   box-shadow: 3px 4px 4px rgb(89, 90, 94)  
 }
+input[type=text]:hover{
+background-color: yellow;
+}
+input[type=text]:focus{
+  background-color: yellow;
+  }
 .col-3 .form-group{
     text-align: center;
 }
