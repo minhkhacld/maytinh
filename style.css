@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+@media screen and (max-width: 400px) {
+  .container .row .col-4 .form-group label{
+    font-size: 11px !important;
+  }
+}
 body {
   margin: 0;
   padding: 0;
@@ -82,7 +87,7 @@ li a:hover:not(.active) {
 }
 .container h1 {
   text-align: center;
-  color: white !important;
+  color: white;
   font-size: 3.8vh;   
   font-weight: bold;  
 }
