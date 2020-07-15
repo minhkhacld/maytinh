@@ -36,22 +36,22 @@ th_tinhtoan.onclick = () => {
 
   var attentmin =
     (Math.round(
-      baygio1 * 420 +
-      baybamuoi1 * 450 +
-      tamgio1 * 480 +
-      tambamuoi1 * 510 +
-      chingio1 * 540 +
-      chinbamuoi1 * 570 +
-      muoigio1 * 600 +
-      muoibamuoi1 * 630 +
-      muoimotgio1 * 660 +
-      muoimotbamuoi1 * 690 +
-      timeoptionmot * mpoptionmot * 60 +
-      timeoptionhai * mpoptionhai * 60
-      - nptmp * npttime * 60 - ltime * sltt1
-    ) *
-      tarper1) /
-    100;
+      (baygio1 * 420 +
+        baybamuoi1 * 450 +
+        tamgio1 * 480 +
+        tambamuoi1 * 510 +
+        chingio1 * 540 +
+        chinbamuoi1 * 570 +
+        muoigio1 * 600 +
+        muoibamuoi1 * 630 +
+        muoimotgio1 * 660 +
+        muoimotbamuoi1 * 690 +
+        timeoptionmot * mpoptionmot * 60 +
+        timeoptionhai * mpoptionhai * 60
+        // - nptmp * npttime * 60 - ltime * sltt1
+        - (nptmp * npttime * 60)
+        * tarper1) / 100)
+    )
   attent_min.innerHTML = attentmin + " phút";
 
   var producemin = Math.round(sltt1 * smv1);
@@ -62,9 +62,9 @@ th_tinhtoan.onclick = () => {
   var target1 = Math.round(attentmin / smv1);
   target.innerHTML = target1 + " cái/ngày";
   //Eff
-  var eff1 = Math.ceil((producemin / attentmin) * 100);
+  var eff1 = Math.ceil((producemin + (ltime * sltt1) / attentmin) * 100);
   // console.log(eff1)
-  eff.innerHTML = ((producemin / attentmin) * 100).toFixed(3) + " %";
+  eff.innerHTML = ((producemin + (ltime * sltt1) / attentmin) * 100).toFixed(3) + " %";
   // Insentive
   var hieusuat = [
     50,
