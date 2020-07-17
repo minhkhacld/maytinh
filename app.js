@@ -9,6 +9,10 @@ th_tinhtoan.onclick = () => {
   var smv1 = smv.value;
   var ltime = losttime.value;
   var sltt1 = sltt.value;
+  var smv2 =document.getElementById('smvhai').value;
+  var sltthai =document.getElementById('sltthai').value;
+  var losttimehai =document.getElementById('losttimehai').value;
+
   var tarper1 = parseInt(tarper.value);
   console.log(tarper1);
   var baygio1 = baygio.value;
@@ -46,15 +50,15 @@ th_tinhtoan.onclick = () => {
         muoibamuoi1 * 630 +
         muoimotgio1 * 660 +
         muoimotbamuoi1 * 690 +
-        timeoptionmot * mpoptionmot * 60 +
-        timeoptionhai * mpoptionhai * 60
+      (timeoptionmot * mpoptionmot * 60) +
+        (timeoptionhai * mpoptionhai * 60)
         // - nptmp * npttime * 60 - ltime * sltt1
         - (nptmp * npttime * 60)
-        * tarper1) / 100)
+        ) / 100* tarper1)
     )
   attent_min.innerHTML = attentmin + " phút";
 
-  var producemin = Math.round(sltt1 * smv1);
+  var producemin = Math.round(sltt1 * smv1 + sltthai*smvhai);
   produce_min.innerHTML = producemin + " phút";
   //Dư/ thiếu
   result_min.innerHTML = attentmin - producemin + " phút";
@@ -62,7 +66,7 @@ th_tinhtoan.onclick = () => {
   var target1 = Math.round(attentmin / smv1);
   target.innerHTML = target1 + " cái/ngày";
   //Eff
-  var eff1 = Math.ceil((producemin + (ltime * sltt1) / attentmin) * 100);
+  var eff1 = Math.ceil(((producemin + (ltime * sltt1) +(losttimehai*sltthai)) / attentmin) * 100);
   // console.log(eff1)
   eff.innerHTML = ((producemin + (ltime * sltt1) / attentmin) * 100).toFixed(3) + " %";
   // Insentive
