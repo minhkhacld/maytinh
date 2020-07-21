@@ -24,13 +24,13 @@ th_tinhtoan.onclick = () => {
   var muoibamuoi1 = muoibamuoi.value;
   var muoimotgio1 = muoimotgio.value;
   var muoimotbamuoi1 = muoimotbamuoi.value;
-  var timeoptionmot = parseInt(timeoption1.value);
+  var timeoptionmot = timeoption1.value;
   console.log(timeoptionmot);
-  var timeoptionhai = parseInt(timeoption2.value);
+  var timeoptionhai = timeoption2.value;
   console.log(timeoptionhai);
-  var mpoptionmot = parseInt(mpoption1.value);
+  var mpoptionmot = mpoption1.value;
   console.log(mpoptionmot);
-  var mpoptionhai = parseInt(mpoption2.value);
+  var mpoptionhai = mpoption2.value;
   console.log(mpoptionhai);
 
   var nptmp = document.getElementById("npt-mp").value;
