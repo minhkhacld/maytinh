@@ -67,7 +67,7 @@ th_tinhtoan.onclick = () => {
   var target1 = Math.round(attentmin / smv1);
   target.innerHTML = target1 + " cái/ngày";
   //Eff
-  var eff1 = Math.ceil(((producemin+(ltime*sltt1)+(losttimehai*sltthai)) / attentmin) * 100);
+  var eff1 = Math.round(((producemin+(ltime*sltt1)+(losttimehai*sltthai)) / attentmin) * 100);
   // var eff1 = Math.ceil((producemin +(ltime * sltt1)/ attentmin) * 100);
   // console.log(eff1)
   eff.innerHTML = (((producemin+(ltime*sltt1)+(losttimehai*sltthai)) / attentmin)*100).toFixed(2) + " %";
@@ -238,19 +238,18 @@ th_tinhtoan.onclick = () => {
   }
   //SPORTFIELD
   else if (myFunction() !== -1 && typeofpd.value === "2") {
-    //OPERATOR
     if (myFunction() <= 19) {
-      var tiencongnhan = myFunction() * 2942 + 44418;
+      var tiencongnhan = myFunction() * 2334 + 37341;
       opeins.innerHTML = tiencongnhan + " VND";
     } else if (myFunction() > 19 && myFunction() <= 29) {
-      var tiencongnhan = myFunction() * 2942 + 44418 + 17942 - 2942;
+      var tiencongnhan = myFunction() * 2334 + 37341 + 16334 - 2334;
       opeins.innerHTML = tiencongnhan + " VND";
     } else if (myFunction() > 29 && myFunction() <= 70) {
       var tiencongnhan =
-        myFunction() * 2942 + 44418 + 17942 + 29420 - 2942 - 2942;
+        myFunction() * 2334 + 37341 + 16334 + 23340 - 2334- 2334;
       opeins.innerHTML = tiencongnhan + " VND";
     } else if (myFunction() > 70) {
-      var tiencongnhan = 70 * 2942 + 44418 + 17942 + 29420 - 2942 - 2942;
+      var tiencongnhan = 70 * 2334 + 37341 + 16334 + 23340 - 2334;
       opeins.innerHTML = tiencongnhan + " VND";
     }
     //technical garment - LEADER
@@ -346,7 +345,7 @@ var board = [
   {
     hieu_suat: 50,
     norm_oper: 30264,
-    tech_oper: 44418,
+    tech_oper: 37341,
     norm_lead: 30264,
     tech_lead: 44418,
     ie_ppc: 37830,
@@ -356,7 +355,7 @@ var board = [
   {
     hieu_suat: 51,
     norm_oper: 31990,
-    tech_oper: 47360,
+    tech_oper: 39675,
     norm_lead: 35189,
     tech_lead: 52096,
     ie_ppc: 39988,
@@ -366,7 +365,7 @@ var board = [
   {
     hieu_suat: 52,
     norm_oper: 33716,
-    tech_oper: 50302,
+    tech_oper: 42009,
     norm_lead: 37088,
     tech_lead: 55332,
     ie_ppc: 42145,
@@ -376,7 +375,7 @@ var board = [
   {
     hieu_suat: 53,
     norm_oper: 35442,
-    tech_oper: 53244,
+    tech_oper: 44343,
     norm_lead: 38986,
     tech_lead: 58568,
     ie_ppc: 44303,
@@ -386,7 +385,7 @@ var board = [
   {
     hieu_suat: 54,
     norm_oper: 37168,
-    tech_oper: 56186,
+    tech_oper: 46677,
     norm_lead: 40885,
     tech_lead: 61805,
     ie_ppc: 46460,
@@ -396,7 +395,7 @@ var board = [
   {
     hieu_suat: 55,
     norm_oper: 38894,
-    tech_oper: 59128,
+    tech_oper: 49011,
     norm_lead: 42783,
     tech_lead: 65041,
     ie_ppc: 48618,
@@ -406,7 +405,7 @@ var board = [
   {
     hieu_suat: 56,
     norm_oper: 40620,
-    tech_oper: 62070,
+    tech_oper: 51345,
     norm_lead: 44682,
     tech_lead: 68277,
     ie_ppc: 50775,
@@ -416,7 +415,7 @@ var board = [
   {
     hieu_suat: 57,
     norm_oper: 42346,
-    tech_oper: 65012,
+    tech_oper: 53679,
     norm_lead: 46581,
     tech_lead: 71513,
     ie_ppc: 52933,
@@ -426,7 +425,7 @@ var board = [
   {
     hieu_suat: 58,
     norm_oper: 44072,
-    tech_oper: 67954,
+    tech_oper: 56013,
     norm_lead: 48479,
     tech_lead: 74749,
     ie_ppc: 55090,
@@ -436,7 +435,7 @@ var board = [
   {
     hieu_suat: 59,
     norm_oper: 45798,
-    tech_oper: 70896,
+    tech_oper: 58347,
     norm_lead: 50378,
     tech_lead: 77986,
     ie_ppc: 57248,
@@ -446,7 +445,7 @@ var board = [
   {
     hieu_suat: 60,
     norm_oper: 47524,
-    tech_oper: 73838,
+    tech_oper: 60681,
     norm_lead: 52276,
     tech_lead: 81222,
     ie_ppc: 59405,
@@ -456,7 +455,7 @@ var board = [
   {
     hieu_suat: 61,
     norm_oper: 49250,
-    tech_oper: 76780,
+    tech_oper: 63015,
     norm_lead: 59100,
     tech_lead: 92136,
     ie_ppc: 61563,
@@ -466,7 +465,7 @@ var board = [
   {
     hieu_suat: 62,
     norm_oper: 50976,
-    tech_oper: 79722,
+    tech_oper: 65349,
     norm_lead: 61171,
     tech_lead: 95666,
     ie_ppc: 63720,
@@ -476,7 +475,7 @@ var board = [
   {
     hieu_suat: 63,
     norm_oper: 52702,
-    tech_oper: 82664,
+    tech_oper: 67683,
     norm_lead: 63242,
     tech_lead: 99197,
     ie_ppc: 65878,
@@ -486,7 +485,7 @@ var board = [
   {
     hieu_suat: 64,
     norm_oper: 54428,
-    tech_oper: 85606,
+    tech_oper: 70017,
     norm_lead: 65314,
     tech_lead: 102727,
     ie_ppc: 68035,
@@ -496,7 +495,7 @@ var board = [
   {
     hieu_suat: 65,
     norm_oper: 56154,
-    tech_oper: 88548,
+    tech_oper: 72351,
     norm_lead: 67385,
     tech_lead: 106258,
     ie_ppc: 70193,
@@ -506,7 +505,7 @@ var board = [
   {
     hieu_suat: 66,
     norm_oper: 57880,
-    tech_oper: 91490,
+    tech_oper: 74685,
     norm_lead: 69456,
     tech_lead: 109788,
     ie_ppc: 72350,
@@ -516,7 +515,7 @@ var board = [
   {
     hieu_suat: 67,
     norm_oper: 59606,
-    tech_oper: 94432,
+    tech_oper: 77019,
     norm_lead: 71527,
     tech_lead: 113318,
     ie_ppc: 74508,
@@ -526,7 +525,7 @@ var board = [
   {
     hieu_suat: 68,
     norm_oper: 61332,
-    tech_oper: 97374,
+    tech_oper: 79353,
     norm_lead: 73598,
     tech_lead: 116849,
     ie_ppc: 76665,
@@ -536,7 +535,7 @@ var board = [
   {
     hieu_suat: 69,
     norm_oper: 63058,
-    tech_oper: 100316,
+    tech_oper: 81687,
     norm_lead: 75670,
     tech_lead: 120379,
     ie_ppc: 78823,
@@ -546,7 +545,7 @@ var board = [
   {
     hieu_suat: 70,
     norm_oper: 77784,
-    tech_oper: 118258,
+    tech_oper: 98021,
     norm_lead: 93341,
     tech_lead: 141910,
     ie_ppc: 97230,
@@ -556,7 +555,7 @@ var board = [
   {
     hieu_suat: 71,
     norm_oper: 79510,
-    tech_oper: 121200,
+    tech_oper: 100355,
     norm_lead: 111314,
     tech_lead: 169680,
     ie_ppc: 99388,
@@ -566,7 +565,7 @@ var board = [
   {
     hieu_suat: 72,
     norm_oper: 81236,
-    tech_oper: 124142,
+    tech_oper: 102689,
     norm_lead: 113730,
     tech_lead: 173799,
     ie_ppc: 101545,
@@ -576,7 +575,7 @@ var board = [
   {
     hieu_suat: 73,
     norm_oper: 82962,
-    tech_oper: 127084,
+    tech_oper: 105023,
     norm_lead: 116147,
     tech_lead: 177918,
     ie_ppc: 103703,
@@ -586,7 +585,7 @@ var board = [
   {
     hieu_suat: 74,
     norm_oper: 84688,
-    tech_oper: 130026,
+    tech_oper: 107357,
     norm_lead: 118563,
     tech_lead: 182036,
     ie_ppc: 105860,
@@ -596,7 +595,7 @@ var board = [
   {
     hieu_suat: 75,
     norm_oper: 86414,
-    tech_oper: 132968,
+    tech_oper: 109691,
     norm_lead: 120980,
     tech_lead: 186155,
     ie_ppc: 108018,
@@ -606,7 +605,7 @@ var board = [
   {
     hieu_suat: 76,
     norm_oper: 88140,
-    tech_oper: 135910,
+    tech_oper: 112025,
     norm_lead: 123396,
     tech_lead: 190274,
     ie_ppc: 110175,
@@ -616,7 +615,7 @@ var board = [
   {
     hieu_suat: 77,
     norm_oper: 89866,
-    tech_oper: 138852,
+    tech_oper: 114359,
     norm_lead: 125812,
     tech_lead: 194393,
     ie_ppc: 112333,
@@ -626,7 +625,7 @@ var board = [
   {
     hieu_suat: 78,
     norm_oper: 91592,
-    tech_oper: 141794,
+    tech_oper: 116693,
     norm_lead: 128229,
     tech_lead: 198512,
     ie_ppc: 114490,
@@ -636,7 +635,7 @@ var board = [
   {
     hieu_suat: 79,
     norm_oper: 93318,
-    tech_oper: 144736,
+    tech_oper: 119027,
     norm_lead: 130645,
     tech_lead: 202630,
     ie_ppc: 116648,
@@ -646,7 +645,7 @@ var board = [
   {
     hieu_suat: 80,
     norm_oper: 110578,
-    tech_oper: 174156,
+    tech_oper: 142367,
     norm_lead: 154809,
     tech_lead: 243818,
     ie_ppc: 138223,
@@ -656,7 +655,7 @@ var board = [
   {
     hieu_suat: 81,
     norm_oper: 112304,
-    tech_oper: 177098,
+    tech_oper: 144701,
     norm_lead: 179686,
     tech_lead: 283357,
     ie_ppc: 140380,
@@ -666,7 +665,7 @@ var board = [
   {
     hieu_suat: 82,
     norm_oper: 114030,
-    tech_oper: 180040,
+    tech_oper: 147035,
     norm_lead: 182448,
     tech_lead: 288064,
     ie_ppc: 142538,
@@ -676,7 +675,7 @@ var board = [
   {
     hieu_suat: 83,
     norm_oper: 115756,
-    tech_oper: 182982,
+    tech_oper: 149369,
     norm_lead: 185210,
     tech_lead: 292771,
     ie_ppc: 144695,
@@ -686,7 +685,7 @@ var board = [
   {
     hieu_suat: 84,
     norm_oper: 117482,
-    tech_oper: 185924,
+    tech_oper: 151703,
     norm_lead: 187971,
     tech_lead: 297478,
     ie_ppc: 146853,
@@ -696,7 +695,7 @@ var board = [
   {
     hieu_suat: 85,
     norm_oper: 119208,
-    tech_oper: 188866,
+    tech_oper: 154037,
     norm_lead: 190733,
     tech_lead: 302186,
     ie_ppc: 149010,
@@ -706,7 +705,7 @@ var board = [
   {
     hieu_suat: 86,
     norm_oper: 120934,
-    tech_oper: 191808,
+    tech_oper: 156371,
     norm_lead: 193494,
     tech_lead: 306893,
     ie_ppc: 151168,
@@ -716,7 +715,7 @@ var board = [
   {
     hieu_suat: 87,
     norm_oper: 122660,
-    tech_oper: 194750,
+    tech_oper: 158705,
     norm_lead: 196256,
     tech_lead: 311600,
     ie_ppc: 153325,
@@ -726,7 +725,7 @@ var board = [
   {
     hieu_suat: 88,
     norm_oper: 124386,
-    tech_oper: 197692,
+    tech_oper: 161039,
     norm_lead: 199018,
     tech_lead: 316307,
     ie_ppc: 155483,
@@ -736,7 +735,7 @@ var board = [
   {
     hieu_suat: 89,
     norm_oper: 126112,
-    tech_oper: 200634,
+    tech_oper: 163373,
     norm_lead: 201779,
     tech_lead: 321014,
     ie_ppc: 157640,
@@ -746,7 +745,7 @@ var board = [
   {
     hieu_suat: 90,
     norm_oper: 127838,
-    tech_oper: 203576,
+    tech_oper: 165707,
     norm_lead: 204541,
     tech_lead: 325722,
     ie_ppc: 159798,
@@ -756,7 +755,7 @@ var board = [
   {
     hieu_suat: 91,
     norm_oper: 129564,
-    tech_oper: 206518,
+    tech_oper: 168041,
     norm_lead: 233215,
     tech_lead: 371732,
     ie_ppc: 161955,
@@ -766,7 +765,7 @@ var board = [
   {
     hieu_suat: 92,
     norm_oper: 131290,
-    tech_oper: 209460,
+    tech_oper: 170375,
     norm_lead: 236322,
     tech_lead: 377028,
     ie_ppc: 164113,
@@ -776,7 +775,7 @@ var board = [
   {
     hieu_suat: 93,
     norm_oper: 133016,
-    tech_oper: 212402,
+    tech_oper: 172709,
     norm_lead: 239429,
     tech_lead: 382324,
     ie_ppc: 166270,
@@ -786,7 +785,7 @@ var board = [
   {
     hieu_suat: 94,
     norm_oper: 134742,
-    tech_oper: 215344,
+    tech_oper: 175043,
     norm_lead: 242536,
     tech_lead: 387619,
     ie_ppc: 168428,
@@ -796,7 +795,7 @@ var board = [
   {
     hieu_suat: 95,
     norm_oper: 136468,
-    tech_oper: 218286,
+    tech_oper: 177377,
     norm_lead: 245642,
     tech_lead: 392915,
     ie_ppc: 170585,
@@ -806,7 +805,7 @@ var board = [
   {
     hieu_suat: 96,
     norm_oper: 138194,
-    tech_oper: 221228,
+    tech_oper: 179711,
     norm_lead: 248749,
     tech_lead: 398210,
     ie_ppc: 172743,
@@ -816,7 +815,7 @@ var board = [
   {
     hieu_suat: 97,
     norm_oper: 139920,
-    tech_oper: 224170,
+    tech_oper: 182045,
     norm_lead: 251856,
     tech_lead: 403506,
     ie_ppc: 174900,
@@ -826,7 +825,7 @@ var board = [
   {
     hieu_suat: 98,
     norm_oper: 141646,
-    tech_oper: 227112,
+    tech_oper: 184379,
     norm_lead: 254963,
     tech_lead: 408802,
     ie_ppc: 177058,
@@ -836,7 +835,7 @@ var board = [
   {
     hieu_suat: 99,
     norm_oper: 143372,
-    tech_oper: 230054,
+    tech_oper: 186713,
     norm_lead: 258070,
     tech_lead: 414097,
     ie_ppc: 179215,
@@ -846,7 +845,7 @@ var board = [
   {
     hieu_suat: 100,
     norm_oper: 145098,
-    tech_oper: 232996,
+    tech_oper: 189047,
     norm_lead: 261176,
     tech_lead: 419393,
     ie_ppc: 181373,
@@ -856,7 +855,7 @@ var board = [
   {
     hieu_suat: 101,
     norm_oper: 146824,
-    tech_oper: 235938,
+    tech_oper: 191381,
     norm_lead: 293648,
     tech_lead: 471876,
     ie_ppc: 183530,
@@ -866,7 +865,7 @@ var board = [
   {
     hieu_suat: 102,
     norm_oper: 148550,
-    tech_oper: 238880,
+    tech_oper: 193715,
     norm_lead: 297100,
     tech_lead: 477760,
     ie_ppc: 185688,
@@ -876,7 +875,7 @@ var board = [
   {
     hieu_suat: 103,
     norm_oper: 150276,
-    tech_oper: 241822,
+    tech_oper: 196049,
     norm_lead: 300552,
     tech_lead: 483644,
     ie_ppc: 187845,
@@ -886,7 +885,7 @@ var board = [
   {
     hieu_suat: 104,
     norm_oper: 152002,
-    tech_oper: 244764,
+    tech_oper: 198383,
     norm_lead: 304004,
     tech_lead: 489528,
     ie_ppc: 190003,
@@ -896,7 +895,7 @@ var board = [
   {
     hieu_suat: 105,
     norm_oper: 153728,
-    tech_oper: 247706,
+    tech_oper: 200717,
     norm_lead: 307456,
     tech_lead: 495412,
     ie_ppc: 192160,
@@ -906,7 +905,7 @@ var board = [
   {
     hieu_suat: 106,
     norm_oper: 155454,
-    tech_oper: 250648,
+    tech_oper: 203051,
     norm_lead: 310908,
     tech_lead: 501296,
     ie_ppc: 194318,
@@ -916,7 +915,7 @@ var board = [
   {
     hieu_suat: 107,
     norm_oper: 157180,
-    tech_oper: 253590,
+    tech_oper: 205385,
     norm_lead: 314360,
     tech_lead: 507180,
     ie_ppc: 196475,
@@ -926,7 +925,7 @@ var board = [
   {
     hieu_suat: 108,
     norm_oper: 158906,
-    tech_oper: 256532,
+    tech_oper: 207719,
     norm_lead: 317812,
     tech_lead: 513064,
     ie_ppc: 198633,
@@ -936,7 +935,7 @@ var board = [
   {
     hieu_suat: 109,
     norm_oper: 160632,
-    tech_oper: 259474,
+    tech_oper: 210053,
     norm_lead: 321264,
     tech_lead: 518948,
     ie_ppc: 200790,
@@ -946,7 +945,7 @@ var board = [
   {
     hieu_suat: 110,
     norm_oper: 162358,
-    tech_oper: 262416,
+    tech_oper: 212387,
     norm_lead: 324716,
     tech_lead: 524832,
     ie_ppc: 202948,
@@ -956,7 +955,7 @@ var board = [
   {
     hieu_suat: 111,
     norm_oper: 164084,
-    tech_oper: 265358,
+    tech_oper: 214721,
     norm_lead: 360985,
     tech_lead: 583788,
     ie_ppc: 205105,
@@ -966,7 +965,7 @@ var board = [
   {
     hieu_suat: 112,
     norm_oper: 165810,
-    tech_oper: 268300,
+    tech_oper: 217055,
     norm_lead: 364782,
     tech_lead: 590260,
     ie_ppc: 207263,
@@ -976,7 +975,7 @@ var board = [
   {
     hieu_suat: 113,
     norm_oper: 167536,
-    tech_oper: 271242,
+    tech_oper: 219389,
     norm_lead: 368579,
     tech_lead: 596732,
     ie_ppc: 209420,
@@ -986,7 +985,7 @@ var board = [
   {
     hieu_suat: 114,
     norm_oper: 169262,
-    tech_oper: 274184,
+    tech_oper: 221723,
     norm_lead: 372376,
     tech_lead: 603205,
     ie_ppc: 211578,
@@ -996,7 +995,7 @@ var board = [
   {
     hieu_suat: 115,
     norm_oper: 170988,
-    tech_oper: 277126,
+    tech_oper: 224057,
     norm_lead: 376174,
     tech_lead: 609677,
     ie_ppc: 213735,
@@ -1006,7 +1005,7 @@ var board = [
   {
     hieu_suat: 116,
     norm_oper: 172714,
-    tech_oper: 280068,
+    tech_oper: 226391,
     norm_lead: 379971,
     tech_lead: 616150,
     ie_ppc: 215893,
@@ -1016,7 +1015,7 @@ var board = [
   {
     hieu_suat: 117,
     norm_oper: 174440,
-    tech_oper: 283010,
+    tech_oper: 228725,
     norm_lead: 383768,
     tech_lead: 622622,
     ie_ppc: 218050,
@@ -1026,7 +1025,7 @@ var board = [
   {
     hieu_suat: 118,
     norm_oper: 176166,
-    tech_oper: 285952,
+    tech_oper: 231059,
     norm_lead: 387565,
     tech_lead: 629094,
     ie_ppc: 220208,
@@ -1036,7 +1035,7 @@ var board = [
   {
     hieu_suat: 119,
     norm_oper: 177892,
-    tech_oper: 288894,
+    tech_oper: 233393,
     norm_lead: 391362,
     tech_lead: 635567,
     ie_ppc: 222365,
@@ -1046,7 +1045,7 @@ var board = [
   {
     hieu_suat: 120,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1056,7 +1055,7 @@ var board = [
   {
     hieu_suat: 121,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1066,7 +1065,7 @@ var board = [
   {
     hieu_suat: 122,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1076,7 +1075,7 @@ var board = [
   {
     hieu_suat: 123,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1086,7 +1085,7 @@ var board = [
   {
     hieu_suat: 124,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1096,7 +1095,7 @@ var board = [
   {
     hieu_suat: 125,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1106,7 +1105,7 @@ var board = [
   {
     hieu_suat: 126,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1116,7 +1115,7 @@ var board = [
   {
     hieu_suat: 127,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper:235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1126,7 +1125,7 @@ var board = [
   {
     hieu_suat: 128,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1136,7 +1135,7 @@ var board = [
   {
     hieu_suat: 129,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
@@ -1146,7 +1145,7 @@ var board = [
   {
     hieu_suat: 130,
     norm_oper: 179618,
-    tech_oper: 291836,
+    tech_oper: 235727,
     norm_lead: 395160,
     tech_lead: 642039,
     ie_ppc: 224523,
