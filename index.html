@@ -1,372 +1,291 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hiệu suất & Thưởng — IE Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Calculator</title>
     <link rel="icon" type="image/x-icon" href="./picture/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
-                        sans: ['Inter', '-apple-system', 'sans-serif'],
-                    },
-                    colors: {
-                        canvas: '#F2F7F6',
-                        surface: '#FFFFFF',
-                        surfacealt: '#EBF3F1',
-                        ink: '#0F211D',
-                        subink: '#5E7570',
-                        line: '#DCE7E3',
-                        accent: '#146B5C',
-                        accentdark: '#0E4F44',
-                        accentsoft: '#E1F1EC',
-                        amber: '#C67C2E',
-                        ambersoft: '#F7EBDC',
-                        good: '#146B5C',
-                        mid: '#C67C2E',
-                        bad: '#B14A3E',
-                    },
-                    boxShadow: {
-                        card: '0 1px 2px rgba(15,33,29,0.04), 0 12px 28px -14px rgba(15,33,29,0.16)',
-                        pill: '0 1px 3px rgba(15,33,29,0.12)',
-                    },
-                    borderRadius: { xl2: '1.5rem' },
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
-        body { -webkit-font-smoothing: antialiased; }
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 
-        .field {
-            width: 100%; border-radius: 1rem; border: 1.5px solid #DCE7E3; background: #fff;
-            padding: 0.7rem 0.9rem; font-size: 15px; color: #0F211D; transition: all .15s ease;
-        }
-        .field::placeholder { color: #9AAEA9; }
-        .field:focus { outline: none; border-color: #146B5C; box-shadow: 0 0 0 4px #E1F1EC; }
-
-        .field-label {
-            display: block; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
-            color: #5E7570; margin-bottom: 6px;
-        }
-
-        .seg { display: grid; background: #EBF3F1; border-radius: 1rem; padding: 4px; gap: 4px; }
-        .seg input { display: none; }
-        .seg label {
-            display: flex; align-items: center; justify-content: center; text-align: center;
-            border-radius: 0.75rem; padding: 10px 8px; font-size: 13px; font-weight: 600; color: #5E7570;
-            cursor: pointer; user-select: none; transition: all .15s ease;
-        }
-        .seg input:checked + label { background: #fff; color: #0F211D; box-shadow: 0 1px 3px rgba(15,33,29,0.12); }
-
-        .shift-panel[data-hidden="true"] { display: none; }
-
-        .result-row:last-child { border-bottom: none; }
-
-        #gaugeArc { transition: stroke-dashoffset .6s cubic-bezier(.4,0,.2,1), stroke .3s ease; }
-    </style>
 </head>
 
-<body class="bg-canvas font-sans text-ink antialiased pb-28 sm:pb-10">
+<body>
 
-    <!-- Top bar -->
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
-        <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-accent"></span>
-            <span class="text-[11px] font-semibold tracking-[.12em] uppercase text-subink">IE Toolkit</span>
-        </div>
-        <h1 class="mt-2 font-display text-[26px] sm:text-[32px] font-semibold tracking-tight text-ink leading-tight">
-            Hiệu suất &amp; Thưởng
-        </h1>
-        <p class="mt-1 text-[14px] text-subink">Nhập sản lượng và giờ công để tính hiệu suất, tiền thưởng tổ.</p>
-    </div>
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 mt-6 space-y-5">
 
-        <!-- Ca 1 / Ca 2 -->
-        <section class="bg-surface rounded-xl2 shadow-card border border-black/5 p-5 sm:p-6">
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-[13px] font-semibold uppercase tracking-wide text-subink">Sản lượng theo ca</h2>
+    <div class="container" id="title">
+        <div class="row">
+            <div class="col">
+                <h1><i class="fa fa-calculator" aria-hidden="true"></i> Efficiency Calculator</h1>
             </div>
-
-            <div class="seg grid-cols-2 mb-5">
-                <input type="radio" name="shiftpick" id="shift1" checked>
-                <label for="shift1">Ca 1</label>
-                <input type="radio" name="shiftpick" id="shift2">
-                <label for="shift2">Ca 2</label>
-            </div>
-
-            <div class="shift-panel" id="panelShift1" data-hidden="false">
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div>
-                        <label class="field-label" for="smv">SMV</label>
-                        <input type="number" inputmode="decimal" class="field" id="smv" placeholder="0.00">
-                    </div>
-                    <div>
-                        <label class="field-label" for="sltt">Sản lượng thực tế</label>
-                        <input type="number" inputmode="decimal" class="field" id="sltt" placeholder="0">
-                    </div>
-                    <div>
-                        <label class="field-label" for="losttime">Lost time</label>
-                        <input type="number" inputmode="decimal" class="field" id="losttime" placeholder="0">
-                    </div>
-                </div>
-            </div>
-
-            <div class="shift-panel" id="panelShift2" data-hidden="true">
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div>
-                        <label class="field-label" for="smvhai">SMV</label>
-                        <input type="number" inputmode="decimal" class="field" id="smvhai" placeholder="0.00">
-                    </div>
-                    <div>
-                        <label class="field-label" for="sltthai">Sản lượng thực tế</label>
-                        <input type="number" inputmode="decimal" class="field" id="sltthai" placeholder="0">
-                    </div>
-                    <div>
-                        <label class="field-label" for="losttimehai">Lost time</label>
-                        <input type="number" inputmode="decimal" class="field" id="losttimehai" placeholder="0">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mục tiêu -->
-        <section class="bg-surface rounded-xl2 shadow-card border border-black/5 p-5 sm:p-6">
-            <h2 class="text-[13px] font-semibold uppercase tracking-wide text-subink mb-4">Mục tiêu &amp; người bị ảnh hưởng</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div>
-                    <label class="field-label" for="tarper">Mục tiêu (%)</label>
-                    <input type="text" class="field" id="tarper" value="100%">
-                </div>
-                <div>
-                    <label class="field-label" for="npt-mp">Người (NPT)</label>
-                    <input type="number" inputmode="decimal" class="field" id="npt-mp" placeholder="0">
-                </div>
-                <div>
-                    <label class="field-label" for="npt-time">Giờ (NPT)</label>
-                    <input type="number" inputmode="decimal" class="field" id="npt-time" placeholder="0">
-                </div>
-            </div>
-        </section>
-
-        <!-- Giờ công -->
-        <section class="bg-surface rounded-xl2 shadow-card border border-black/5 p-5 sm:p-6">
-            <h2 class="text-[13px] font-semibold uppercase tracking-wide text-subink mb-4">Số người theo giờ công</h2>
-            <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 mb-3">
-                <div>
-                    <label class="field-label" for="baygio">7H</label>
-                    <input type="number" inputmode="decimal" class="field" id="baygio">
-                </div>
-                <div>
-                    <label class="field-label" for="baybamuoi">7.5H</label>
-                    <input type="number" inputmode="decimal" class="field" id="baybamuoi">
-                </div>
-                <div>
-                    <label class="field-label" for="tamgio">8.0H</label>
-                    <input type="number" inputmode="decimal" class="field" id="tamgio">
-                </div>
-                <div>
-                    <label class="field-label" for="tambamuoi">8.5H</label>
-                    <input type="number" inputmode="decimal" class="field" id="tambamuoi">
-                </div>
-            </div>
-            <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 mb-3">
-                <div>
-                    <label class="field-label" for="chingio">9H</label>
-                    <input type="number" inputmode="decimal" class="field" id="chingio">
-                </div>
-                <div>
-                    <label class="field-label" for="chinbamuoi">9.5H</label>
-                    <input type="number" inputmode="decimal" class="field" id="chinbamuoi">
-                </div>
-                <div>
-                    <label class="field-label" for="muoigio">10H</label>
-                    <input type="number" inputmode="decimal" class="field" id="muoigio">
-                </div>
-                <div>
-                    <label class="field-label" for="muoibamuoi">10.5H</label>
-                    <input type="number" inputmode="decimal" class="field" id="muoibamuoi">
-                </div>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-                <div>
-                    <label class="field-label" for="muoimotgio">11H</label>
-                    <input type="number" inputmode="decimal" class="field" id="muoimotgio">
-                </div>
-                <div>
-                    <label class="field-label" for="muoimotbamuoi">11.5H</label>
-                    <input type="number" inputmode="decimal" class="field" id="muoimotbamuoi">
-                </div>
-                <div class="bg-surfacealt rounded-xl p-3">
-                    <label class="field-label" for="timeoption1">Giờ tuỳ chọn 1</label>
-                    <input type="text" class="field mb-2" id="timeoption1" placeholder="Giờ">
-                    <input type="number" inputmode="decimal" class="field" id="mpoption1" placeholder="Người">
-                </div>
-                <div class="bg-surfacealt rounded-xl p-3">
-                    <label class="field-label" for="timeoption2">Giờ tuỳ chọn 2</label>
-                    <input type="text" class="field mb-2" id="timeoption2" placeholder="Giờ">
-                    <input type="number" inputmode="decimal" class="field" id="mpoption2" placeholder="Người">
-                </div>
-            </div>
-
-            <label class="field-label">Loại hàng</label>
-            <div class="seg grid-cols-2">
-                <input type="radio" name="typeofpd_seg" id="typeofpd_1" checked>
-                <label for="typeofpd_1">REI · UA · ASICS · NIKE</label>
-                <input type="radio" name="typeofpd_seg" id="typeofpd_2">
-                <label for="typeofpd_2">SPORTFIELD</label>
-            </div>
-            <select class="hidden" id="typeofpd">
-                <option value="1">Hàng REI,UA,ASICS,NIKE</option>
-                <option value="2">SPORTFIELD</option>
-            </select>
-        </section>
-
-        <!-- Kết quả -->
-        <section class="bg-surface rounded-xl2 shadow-card border border-black/5 p-5 sm:p-6" id="ketqua">
-            <h2 class="text-[13px] font-semibold uppercase tracking-wide text-subink mb-5">Kết quả</h2>
-
-            <!-- Gauge -->
-            <div class="flex flex-col items-center mb-6">
-                <div class="relative w-40 h-40">
-                    <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
-                        <circle cx="60" cy="60" r="54" fill="none" stroke="#EBF3F1" stroke-width="10" />
-                        <circle id="gaugeArc" cx="60" cy="60" r="54" fill="none" stroke="#146B5C" stroke-width="10"
-                            stroke-linecap="round" stroke-dasharray="339.292" stroke-dashoffset="339.292" />
-                    </svg>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center">
-                        <span id="gaugeValue" class="font-display text-[30px] font-semibold text-ink">–</span>
-                        <span id="gaugeLabel" class="text-[11px] font-medium text-subink mt-0.5">Hiệu suất</span>
-                    </div>
-                </div>
-                <span id="eff" class="hidden"></span>
-            </div>
-
-            <div class="divide-y divide-line">
-                <div class="result-row flex items-center justify-between py-3">
-                    <span class="text-[14px] text-subink">Attendant Minute</span>
-                    <span class="text-[15px] font-semibold text-ink" id="attent_min">–</span>
-                </div>
-                <div class="result-row flex items-center justify-between py-3">
-                    <span class="text-[14px] text-subink">Produce Minute</span>
-                    <span class="text-[15px] font-semibold text-ink" id="produce_min">–</span>
-                </div>
-                <div class="result-row flex items-center justify-between py-3">
-                    <span class="text-[14px] text-subink">Dư / Thiếu</span>
-                    <span class="text-[15px] font-semibold text-ink" id="result_min">–</span>
-                </div>
-                <div class="result-row flex items-center justify-between py-3">
-                    <span class="text-[14px] text-subink">Mục tiêu sản lượng</span>
-                    <span class="text-[15px] font-semibold text-ink" id="target">–</span>
-                </div>
-                <!-- <div class="result-row flex items-center justify-between py-3">
-                    <span class="text-[14px] text-subink">Tiền thưởng công nhân</span>
-                    <span class="text-[15px] font-semibold text-amber" id="opeins">–</span>
-                </div>
-                <div class="result-row flex items-center justify-between py-3">
-                    <span class="text-[14px] text-subink">Tiền thưởng tổ trưởng</span>
-                    <span class="text-[15px] font-semibold text-amber" id="leaderins">–</span>
-                </div> -->
-            </div>
-        </section>
-<!-- 
-        <footer class="text-center text-[12px] text-subink/80 pt-2 pb-6 space-y-3">
-            <div class="flex items-center justify-center gap-4">
-                <a class="hover:text-ink transition" href="https://www.linkedin.com/in/kha-ph%E1%BA%A1m-minh-58aa68153/">LinkedIn</a>
-                <a class="hover:text-ink transition" href="https://www.instagram.com/minhkhacld/">Instagram</a>
-                <a class="hover:text-ink transition" href="https://www.facebook.com/phamminh.kha">Facebook</a>
-            </div>
-            <p>Ứng dụng được viết bởi phòng IE — Kha. Tel: 0355210716, Email: pmkha92@gmail.com<br />© Khapham 2020. All rights reserved.</p>
-        </footer> -->
-    </main>
-
-    <!-- Sticky action bar -->
-    <div class="fixed bottom-0 inset-x-0 z-20 sm:static sm:max-w-3xl sm:mx-auto sm:px-6 sm:pb-8">
-        <div class="bg-surface/95 backdrop-blur border-t border-line sm:border sm:rounded-xl2 sm:shadow-card px-4 py-3 sm:p-3 flex gap-3">
-            <button type="button" id="th_lammoi"
-                class="flex-1 rounded-xl border-[1.5px] border-line bg-white text-ink font-semibold text-[15px] py-3 active:scale-[0.98] transition">
-                Làm Mới
-            </button>
-            <button type="button" id="th_tinhtoan"
-                class="flex-1 rounded-xl bg-accent hover:bg-accentdark text-white font-semibold text-[15px] py-3 active:scale-[0.98] transition shadow-pill">
-                Tính Toán
-            </button>
         </div>
     </div>
+    <!-- Nhập kết quả -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3><i class="fa fa-info-circle" aria-hidden="true"></i> Thông tin cơ bản</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-clock" aria-hidden="true"></i> SMV</label>
+                    <input type="text" class="form-control" name="" id="smv" aria-describedby="helpId"
+                        placeholder="Nhập SMV">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-cubes" aria-hidden="true"></i> Sản lượng</label>
+                    <input type="text" class="form-control" name="" id="sltt" aria-describedby="helpId"
+                        placeholder="Nhập sản lượng thực tế">
+                </div>
+            </div>
 
-    <script>
-        // Shift toggle: swap visible panel, keep both in DOM so IDs/values survive untouched.
-        function bindShiftToggle() {
-            var s1 = document.getElementById('shift1');
-            var s2 = document.getElementById('shift2');
-            var p1 = document.getElementById('panelShift1');
-            var p2 = document.getElementById('panelShift2');
-            function update() {
-                p1.dataset.hidden = s2.checked ? 'true' : 'false';
-                p2.dataset.hidden = s2.checked ? 'false' : 'true';
-            }
-            s1.addEventListener('change', update);
-            s2.addEventListener('change', update);
-        }
-        bindShiftToggle();
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-flask" aria-hidden="true"></i> Lost time</label>
+                    <input type="text" class="form-control" name="" id="losttime" aria-describedby="helpId"
+                        placeholder="Nhập Lost time">
+                </div>
+            </div>
+        </div>
+        <!-- style 2 -->
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-clock" aria-hidden="true"></i> SMV (2)</label>
+                    <input type="text" class="form-control" name="" id="smvhai" aria-describedby="helpId"
+                        placeholder="Nhập SMV">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-cubes" aria-hidden="true"></i> Sản lượng (2)</label>
+                    <input type="text" class="form-control" name="" id="sltthai" aria-describedby="helpId"
+                        placeholder="Nhập sản lượng thực tế">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-flask" aria-hidden="true"></i> Lost time (2)</label>
+                    <input type="text" class="form-control" name="" id="losttimehai" aria-describedby="helpId"
+                        placeholder="Nhập Lost time">
+                </div>
+            </div>
 
-        // Keep hidden native <select id="typeofpd"> in sync with the segmented control
-        // so existing script.js logic (which reads #typeofpd) keeps working unchanged.
-        document.getElementById('typeofpd_1').addEventListener('change', function () {
-            document.getElementById('typeofpd').value = '1';
-        });
-        document.getElementById('typeofpd_2').addEventListener('change', function () {
-            document.getElementById('typeofpd').value = '2';
-        });
+        </div>
+        <!-- //Lost time -->
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""> <i class="fa fa-bullseye" aria-hidden="true"></i> Mục tiêu(%)</label>
+                    <input type="text" class="form-control" name="" id="tarper" value="100%" aria-describedby="helpId"
+                        placeholder="Nhập % (không bắt buộc)">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-user" aria-hidden="true"></i> Người (NPT)</label>
+                    <input type="text" class="form-control" name="" id="npt-mp" aria-describedby="helpId"
+                        placeholder="Người bị ảnh hưởng">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""> <i class="fa fa-hourglass" aria-hidden="true"></i> Giờ (NPT)</label>
+                    <input type="text" class="form-control" name="" id="npt-time" aria-describedby="helpId"
+                        placeholder="Giờ bị ảnh hưởng">
+                </div>
+            </div>
+        </div>
 
-        // Live efficiency gauge: watches the #eff result cell that script.js writes into,
-        // and animates the ring + colors without needing any change to script.js.
-        (function () {
-            var CIRC = 339.292;
-            var effEl = document.getElementById('eff');
-            var arc = document.getElementById('gaugeArc');
-            var valueEl = document.getElementById('gaugeValue');
-            var labelEl = document.getElementById('gaugeLabel');
+    </div>
+    <!-- Số người và số giờ làm việc -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3><i class="fa fa-eye" aria-hidden="true"></i> Số người và số giờ làm việc</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">7H</label>
+                    <input type="text" class="form-control" name="" id="baygio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">7.5H</label>
+                    <input type="text" class="form-control" name="" id="baybamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">8.0H</label>
+                    <input type="text" class="form-control" name="" id="tamgio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">8.5H</label>
+                    <input type="text" class="form-control" name="" id="tambamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">9H</label>
+                    <input type="text" class="form-control" name="" id="chingio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">9.5H</label>
+                    <input type="text" class="form-control" name="" id="chinbamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">10H</label>
+                    <input type="text" class="form-control" name="" id="muoigio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">10.5H</label>
+                    <input type="text" class="form-control" name="" id="muoibamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">11H</label>
+                    <input type="text" class="form-control" name="" id="muoimotgio" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="">11.5H</label>
+                    <input type="text" class="form-control" name="" id="muoimotbamuoi" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for=""><span><input type="text" class="form-control" name="" id="timeoption1"
+                                aria-describedby="helpId" placeholder=""></span></label>
+                    <input type="text" class="form-control" name="" id="mpoption1" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for=""><span><input type="text" class="form-control" name="" id="timeoption2"
+                                aria-describedby="helpId" placeholder=""></span></label>
+                    <input type="text" class="form-control" name="" id="mpoption2" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <label for="">Chọn loại hàng</label>
+                    <select class="form-control" name="" id="typeofpd">
+                        <option value="1">Hàng REI,UA,ASICS,NIKE</option>
+                        <option value="2">SPORTFIELD</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-3"></div> -->
+            <div class="col-6">
+                <button type="button" id="th_tinhtoan" class="btn btn-primary">Tính Toán</button>
+            </div>
+            <div class="col-6">
+                <button type="button" id="th_lammoi" class="btn btn-primary">Làm Mới</button>
+            </div>
+            <!-- <div class="col-3"></div> -->
+        </div>
+    </div>
+    <!-- Xuat ket qua -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3><i class="fa fa-filter" aria-hidden="true"></i> Kết quả</h3>
+            </div>
+        </div>
 
-            function paint() {
-                var raw = (effEl.textContent || '').trim();
-                var num = parseFloat(raw.replace(',', '.').replace('%', ''));
-                if (isNaN(num)) {
-                    arc.style.strokeDashoffset = CIRC;
-                    valueEl.textContent = '–';
-                    labelEl.textContent = 'Hiệu suất';
-                    return;
-                }
-                var pct = Math.max(0, Math.min(num, 100));
-                arc.style.strokeDashoffset = CIRC - (CIRC * pct / 100);
-                valueEl.textContent = Math.round(num) + '%';
-                var color = '#146B5C', label = 'Đạt mục tiêu';
-                if (num < 70) { color = '#B14A3E'; label = 'Dưới mục tiêu'; }
-                else if (num < 95) { color = '#C67C2E'; label = 'Gần mục tiêu'; }
-                else { color = '#146B5C'; label = 'Đạt / vượt mục tiêu'; }
-                arc.style.stroke = color;
-                valueEl.style.color = color;
-                labelEl.textContent = label;
-            }
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width:50%">Thông tin cần tính:</th>
+                            <th style="width:50%">Kết quả:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"><i class="fa fa-hourglass-start" aria-hidden="true"></i> Attendent Minute
+                            </td>
+                            <td class="result" id="attent_min"></td>
 
-            new MutationObserver(paint).observe(effEl, { childList: true, characterData: true, subtree: true });
-            paint();
-        })();
-    </script>
-    <script type="text/javascript" src="script.js"></script>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-heart" aria-hidden="true"></i> Produce Minute</td>
+                            <td class="result" id="produce_min"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-balance-scale" aria-hidden="true"></i> Dư/Thiếu</td>
+                            <td class="result" id="result_min"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-bullseye" aria-hidden="true"></i> Mục tiêu sản lượng</td>
+                            <td class="result" id="target"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-percent" aria-hidden="true"></i> Hiệu suất</td>
+                            <td class="result" id="eff"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="script.js">
+        </script>
 </body>
 
 </html>
