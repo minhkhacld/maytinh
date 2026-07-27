@@ -79,21 +79,52 @@
     </style>
 </head>
 
-<body class="bg-canvas font-sans text-ink antialiased pb-28 sm:pb-10">
-
-    <!-- Top bar -->
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
-        <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-accent"></span>
-            <span class="text-[11px] font-semibold tracking-[.12em] uppercase text-subink">IE Toolkit</span>
+<body>
+<!-- 
+    <div class="container-fluid" style="height: 2.5rem;">
+        <div class="row">
+            <div class="col">
+                <div class="nar-bar">
+                    <ul class="limenu">
+                        <li><a class="active" href="https://minhkhacld.github.io/smv/">Home</a></li>
+                        <li><a href="https://minhkhacld.github.io/smv/">SMV</a></li>
+                        <li><a href="https://minhkhacld.github.io/tudien/">Từ điển</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <h1 class="mt-2 font-display text-[26px] sm:text-[32px] font-semibold tracking-tight text-ink leading-tight">
-            Hiệu suất &amp; Thưởng
-        </h1>
-        <p class="mt-1 text-[14px] text-subink">Nhập sản lượng và giờ công để tính hiệu suất, tiền thưởng tổ.</p>
-    </div>
+    </div> -->
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 mt-6 space-y-5">
+    <div class="container" id="title">
+        <div class="row">
+            <div class="col">
+                <h1><i class="fa fa-calculator" aria-hidden="true"></i> Efficiency Calculator</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Nhập kết quả -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3><i class="fa fa-info-circle" aria-hidden="true"></i> Thông tin cơ bản</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-clock" aria-hidden="true"></i> SMV</label>
+                    <input type="text" class="form-control" name="" id="smv" aria-describedby="helpId"
+                        placeholder="Nhập SMV">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""><i class="fa fa-cubes" aria-hidden="true"></i> Sản lượng</label>
+                    <input type="text" class="form-control" name="" id="sltt" aria-describedby="helpId"
+                        placeholder="Nhập sản lượng thực tế">
+                </div>
+            </div>
 
         <!-- Ca 1 / Ca 2 -->
         <section class="bg-surface rounded-xl2 shadow-card border border-black/5 p-5 sm:p-6">
@@ -222,35 +253,102 @@
                 </div>
             </div>
 
-            <label class="field-label">Loại hàng</label>
-            <div class="seg grid-cols-2">
-                <input type="radio" name="typeofpd_seg" id="typeofpd_1" checked>
-                <label for="typeofpd_1">REI · UA · ASICS · NIKE</label>
-                <input type="radio" name="typeofpd_seg" id="typeofpd_2">
-                <label for="typeofpd_2">SPORTFIELD</label>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-heart" aria-hidden="true"></i> Produce Minute</td>
+                            <td class="result" id="produce_min"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-balance-scale" aria-hidden="true"></i> Dư/Thiếu</td>
+                            <td class="result" id="result_min"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-bullseye" aria-hidden="true"></i> Mục tiêu sản lượng</td>
+                            <td class="result" id="target"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-percent" aria-hidden="true"></i> Hiệu suất</td>
+                            <td class="result" id="eff"></td>
+                        </tr>
+                        <!-- <tr>
+                            <td scope="row"><i class="fa fa-users" aria-hidden="true"></i> Tiền thưởng công nhân</td>
+                            <td class="result" id="opeins"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><i class="fa fa-user-circle" aria-hidden="true"></i> Tiền thưởng tổ trưởng
+                            </td>
+                            <td class="result" id="leaderins"></td>
+                        </tr> -->
+                    </tbody>
+                </table>
             </div>
-            <select class="hidden" id="typeofpd">
-                <option value="1">Hàng REI,UA,ASICS,NIKE</option>
-                <option value="2">SPORTFIELD</option>
+        </div>
+    </div>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3><i class="fa fa-search" aria-hidden="true"></i> Tra cứu hiệu suất - tiền thưởng</h3>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label" for=""><i class="fa fa-map" aria-hidden="true"></i> Chọn Khu Vực</label>
+            <select class="form-control" name="" id="area">
+                <option value="1" id="sew">Sewing</option>
+                <option value="2" id="nonsew">Spreader, Numbering, Bundling, Cutting, Supermarket, Fusing, Bonding,
+                    Printing, Recut</option>
+                <option value="3" id="iron">Ironing, Cutter</option>
+                <option value="4" id="staff">Staff non-sewing, Production Assitant, Automation</option>
+                <option value="5" id="fabric">Fabric, Accessory</option>
+                <option value="6" id="qaqc">QA, QC</option>
+                <option value="7" id="scan">Scan and pack, Finishing, Packing, Cleaning, Change Needle</option>
+                <option value="8" id="ie">IE, Mechanic, PPC, Maintainance, Technical</option>
             </select>
-        </section>
+        </div>
+        <div class="form-group" id="loaihang">
+            <label class="label" for=""><i class="fa fa-star" aria-hidden="true"></i> Chọn loại hàng</label>
+            <select class="form-control" name="" id="typeof_pd">
+                <option value="1">Hàng thông thường (NIKE, REI, ASICS, UA)</option>
+                <option value="2">Hàng kỹ thuật (SPORTFIELD)</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button id="th_xemkq" type="button" class="btn btn-primary" value="">Đồng ý</button>
+            </div>
+            <div class="col-6">
+                <button id="th_refresh" type="button" class="btn btn-primary" value="">Chọn Lại</button>
+            </div>
+        </div>
 
-        <!-- Kết quả -->
-        <section class="bg-surface rounded-xl2 shadow-card border border-black/5 p-5 sm:p-6" id="ketqua">
-            <h2 class="text-[13px] font-semibold uppercase tracking-wide text-subink mb-5">Kết quả</h2>
+        <div class="table_d">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="tableheader"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div id="box"></div>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" id="btn_thugon" class="btn btn-primary"
+                    style="display:none; background-color: tomato;">Thu Gọn</button>
+            </div>
+        </div>
+    </div> -->
 
-            <!-- Gauge -->
-            <div class="flex flex-col items-center mb-6">
-                <div class="relative w-40 h-40">
-                    <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
-                        <circle cx="60" cy="60" r="54" fill="none" stroke="#EBF3F1" stroke-width="10" />
-                        <circle id="gaugeArc" cx="60" cy="60" r="54" fill="none" stroke="#146B5C" stroke-width="10"
-                            stroke-linecap="round" stroke-dasharray="339.292" stroke-dashoffset="339.292" />
-                    </svg>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center">
-                        <span id="gaugeValue" class="font-display text-[30px] font-semibold text-ink">–</span>
-                        <span id="gaugeLabel" class="text-[11px] font-medium text-subink mt-0.5">Hiệu suất</span>
-                    </div>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="social-icons">
+                    <a class="social-icon" href="https://www.linkedin.com/in/kha-ph%E1%BA%A1m-minh-58aa68153/"><i
+                            class="fab fa-linkedin-in"></i></a><a class="social-icon"
+                        href="https://www.instagram.com/minhkhacld/"><i class="fab fa-instagram"></i></a><a
+                        class="social-icon" href="https://www.facebook.com/phamminh.kha"><i
+                            class="fab fa-facebook-f"></i></a>
                 </div>
                 <span id="eff" class="hidden"></span>
             </div>
@@ -323,14 +421,8 @@
         }
         bindShiftToggle();
 
-        // Keep hidden native <select id="typeofpd"> in sync with the segmented control
-        // so existing script.js logic (which reads #typeofpd) keeps working unchanged.
-        document.getElementById('typeofpd_1').addEventListener('change', function () {
-            document.getElementById('typeofpd').value = '1';
-        });
-        document.getElementById('typeofpd_2').addEventListener('change', function () {
-            document.getElementById('typeofpd').value = '2';
-        });
+      </div>   -->
+
 
         // Live efficiency gauge: watches the #eff result cell that script.js writes into,
         // and animates the ring + colors without needing any change to script.js.
